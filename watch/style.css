@@ -1,0 +1,546 @@
+/* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    position: relative;
+    min-height: 100vh;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+.container .search-box{
+    position: relative;
+    height: 42px;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+.search-box input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: #323334;
+    padding: 0 15px 0 45px;
+    color: #fff;
+    border-radius: 6px;
+}
+.search-box i{
+    position: absolute;
+    z-index: 2;
+    color: #999;
+    top: 50%;
+    left: 15px;
+    font-size: 20px;
+    transform: translateY(-50%);
+}
+.container .images .image-box{
+    position: relative;
+    height: 300px;
+    width: 210px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.images{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.images .image-box{
+    margin: 8px;
+}
+.images .image-box img{
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    transition: transform 0.2s linear;
+}
+.image-box:hover img{
+    transform: scale(1.05);
+}
+.image-box h6{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+/* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.4s ease;;
+    
+}
+
+
+/* ===== Colours ===== */
+:root{
+    --body-color: #E4E9F7;
+    --nav-color: #4070F4;
+    --side-nav: #010718;
+    --text-color: #FFF;
+    --search-bar: #F2F2F2;
+    --search-text: #010718;
+}
+
+body{
+    height: 100vh;
+    background-color: var(--body-color);
+}
+
+body.dark{
+    --body-color: #18191A;
+    --nav-color: #18191A;
+    --side-nav: #242526;
+    --text-color: #ffffff;
+    --search-bar: #242526;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background-color: var(--nav-color);
+    z-index: 100;
+}
+
+body.dark nav{
+    border: 1px solid hsl(0, 1%, 29%);
+
+}
+
+nav .nav-bar{
+    position: relative;
+    height: 100%;
+    max-width: 1000px;
+    width: 100%;
+    background-color: var(--nav-color);
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .nav-bar .sidebarOpen{
+    color: var(--text-color);
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+nav .nav-bar .logo a{
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.menu .logo-toggle{
+    display: none;
+}
+
+.nav-bar .nav-links{
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar .nav-links li{
+    margin: 0 5px;
+    list-style: none;
+}
+
+.nav-links li a{
+    position: relative;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px;
+}
+
+.nav-links li a::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.nav-links li:hover a::before{
+    opacity: 1;
+}
+
+.nav-bar .darkLight-searchBox{
+    display: flex;
+    align-items: center;
+}
+
+.darkLight-searchBox .dark-light,
+.darkLight-searchBox .searchToggle{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+
+.dark-light i,
+.searchToggle i{
+    position: absolute;
+    color: var(--text-color);
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dark-light i.sun{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.dark-light.active i.sun{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dark-light.active i.moon{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.searchToggle i.cancel{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.searchToggle.active i.cancel{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.searchToggle.active i.search{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.searchBox{
+    position: relative;
+}
+
+.searchBox .search-field{
+    position: absolute;
+    bottom: -85px;
+    right: 5px;
+    height: 50px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    background-color: var(--nav-color);
+    padding: 3px;
+    border-radius: 6px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.searchToggle.active ~ .search-field{
+    bottom: -74px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.search-field::before{
+    content: '';
+    position: absolute;
+    right: 14px;
+    top: -4px;
+    height: 12px;
+    width: 12px;
+    background-color: var(--nav-color);
+    transform: rotate(-45deg);
+    z-index: -1;
+}
+
+.search-field input{
+    height: 100%;
+    width: 100%;
+    padding: 0 45px 0 15px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--search-text);
+    background-color: var(--search-bar);
+}
+
+body.dark .search-field input{
+    color: var(--text-color);
+}
+
+.search-field i{
+    position: absolute;
+    color: var(--nav-color);
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+body.dark .search-field i{
+    color: var(--text-color);
+}
+
+@media (max-width: 790px) {
+    nav .nav-bar .sidebarOpen{
+        display: block;
+    }
+
+    .menu{
+        position: fixed;
+        height: 100%;
+        width: 320px;
+        left: -100%;
+        top: 0;
+        padding: 20px;
+        background-color: var(--side-nav);
+        z-index: 100;
+        transition: all 0.4s ease;
+    }
+
+    nav.active .menu{
+        left: -0%;
+    }
+
+    nav.active .nav-bar .navLogo a{
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .menu .logo-toggle{
+        display: block;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo-toggle .siderbarClose{
+        color: var(--text-color);
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .nav-bar .nav-links{
+        flex-direction: column;
+        padding-top: 30px;
+    }
+
+    .nav-links li a{
+        display: block;
+        margin-top: 20px;
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+header{
+  height: 100vh;
+  width: 100%;
+  background: url("images/background.png") no-repeat;
+  background-position: center;
+}
+::selection{
+  background: #a3f5ec;
+}
+header nav{
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 12;
+}
+.navbar{
+  width: 90%;
+  display: flex;
+  margin: 20px auto 0 auto;
+  align-items: center;
+  justify-content: space-between;
+}
+  header nav .logo{
+  height: 80px;
+  width: 150px;
+}
+.logo img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+nav .menu{
+  display: flex;
+}
+nav .menu li{
+  list-style: none;
+  margin: 0 10px;
+}
+nav .menu a{
+  color: #2c3e50;
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+}
+nav .menu a:hover{
+  color: rgb(255, 255, 255);
+}
+nav .search-box{
+  position: relative;
+  padding-top: 30px;
+  height: 20px;
+  width: 250px;
+  padding-top: 40px;
+}
+.search-box input[type="text"]{
+  position: absolute;
+  font-size: 18px;
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  outline: none;
+  color: #2c3350;
+  border: 2px solid #2c3350;
+  background: #f2f2f2;
+  padding: 0 10px 0 40px;
+  
+}
+.search-box a{
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  font-size: 20px;
+  color: #2c3350;
+  transform: translateY(-50%);
+  border-right: 2px solid #2c3350;
+  padding: 0 5px 0 0;
+}
+.text-content{
+  position: absolute;
+  top: 33%;
+  left: 7%;
+  z-index: 12;
+}
+header .text-content .text{
+  font-size: 27px;
+  color: #2c3350;
+}
+header .text-content .name{
+color: #2c3350;
+ font-size: 75px;
+ font-weight: 600;
+ margin: -20px 0 0 -3px;
+}
+header .text-content .job{
+ color: #ffffff;
+ font-size: 40px;
+ margin: 5px 0;
+ margin-top: -4px;
+ display: flex;
+}
+.text-content .typing-text{
+  margin-left: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 4px solid #1de2d1;
+  animation: typing 5s steps(15) infinite;
+}
+@keyframes typing{
+  0%{
+    width: 0ch;
+  }
+  50%{
+    width: 15ch;
+  }
+  100%{
+    width: 0ch;
+  }
+}
+.text-content .job .one{
+  color: #1de2d1;
+}
+.text-content .job .two{
+  color: #1de2d1;
+}
+.buttons{
+  margin: 20px 0 0 50px;
+}
+.text-content .buttons button{
+  outline: none;
+  margin: 0 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  color: #fff;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-image: linear-gradient( 135deg, #4070F4     10%, #C346C2 100%);
+}
+.buttons button:hover{
+  transform: scale(0.97);
+}
+.content .girl img{
+  position: absolute;
+  height: 95%;
+  bottom: 0;
+  right: 80px;
+  position: absolute;
+}
+header .media-icons{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+}
+.media-icons a{
+ margin-top: 8px;
+ font-size: 20px;
+ font-weight: 500;
+ text-decoration: none;
+ opacity: 0.7;
+ color: #2c3350;
+ transition: all 0.3s ease;
+}
+.media-icons a:hover{
+ opacity: 1;
+}
